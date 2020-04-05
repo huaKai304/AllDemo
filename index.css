@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+/* 导航条区域 */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+}
+.header .nav{
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+.header .nav .logo{
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    margin-top: -25px;
+    width: 50px;
+    height: 50px;
+}
+.header .nav .logo img{
+    width: 100%;
+}
+.header .nav .list{
+    float: right;
+}
+.header .nav .list li{
+    float: left;
+    margin: 0 20px;
+}
+.header .nav .list li a{
+    color: #777;
+    line-height: 80px;
+}
+.header .nav .list li a:hover{
+    color: #333;
+    font-weight: bold;
+}
+.header .btnWrap{
+    display: none;
+    position: relative;
+    float: right;
+    /* border: 1px solid #000; */
+}
+.header .btnWrap .btn{
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    /*border: 1px solid #000;*/
+	background-image: url('./img/menu.jpg');
+    background-size: 100% 100%;
+}
+.header .btnWrap ul{
+    display: none;
+    width: 300px;
+    margin-top: 60px;
+}
+.header .btnWrap ul li{
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #999;
+}
+.header .btnWrap ul li:last-of-type{
+    border: none;
+}
+.header .btnWrap ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 40px;
+    color: #ddd;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+/* 轮播图区域 */
+.content{
+    position: relative;
+    width: 100%;
+    height: 800px;
+}
+.content #swiper{
+    position: relative;
+    width: 100%;
+    height: 700px;
+    /* border: 1px solid #000; */
+    overflow: hidden;
+}
+.content .text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+.content .text p{
+    color: #fff;
+    font-size: 25px;
+    opacity: .2;
+    transition: all 1s linear;
+    color:#ddd;
+    font-weight:bolder;
+}
+.content:hover .text p{
+    opacity: 1;
+}
+.content .tran{
+    position: absolute;
+    width: 70%;
+    background-color: #fff;
+    margin-top: -50px;
+    /* margin-left: 20%; */
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 15px;
+    box-shadow: 2px 5px rgba(0, 0, 0, 0.2);
+}
+.content .tran ul{
+    width: 100%;
+    display: flex;
+}
+.content .tran ul li{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* 栅格化区域 */
+.project{
+    width: 80%;
+    margin: 100px auto;
+}
+.project .title{
+    font-size: 20px;
+    font-weight: bolder;
+    color: #333
+}
+.project .list{
+    width: 100%;
+    text-align: center;
+}
+.project .list .item{
+    display: inline-block;
+    /* float: left; */
+    margin: 5px;
+    width: 20%;
+}
+.project .list .item img{
+    width: 100%;
+}
+/* 页脚区域 */
+.footer{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-image: url('./img/bottom.jpg');
+    background-size: 100% 100%;
+}
+.footer .shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.footer a{
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+}
+.footer a img{
+    width: 100%;
+}
+.footer p{
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    color: #fff;
+    display: block;
+    width: 40%;
+    height: 300px;
+
+}
+/* 响应式 */
+@media screen and (max-width: 900px){
+    .header{
+        height: 60px;
+    }
+    .header .nav .list li a{
+        line-height: 60px;
+    }
+    .content{
+        height: 700px;
+    }
+    .content #swiper{
+        height: 600px;
+    }
+    .project .list .item{
+        width: 30%;
+    }
+}
+@media screen and (max-width: 700px){
+    .header .nav .list{
+        display: none;
+    }
+    .header .btnWrap{
+        display: block;
+    }
+    .content{
+        height: 550px;
+    }
+    .content #swiper{
+        height: 450px;
+    }
+    .content .tran{
+        display: none;
+    }
+    .project .list .item{
+        width: 45%;
+    }
+}
+@media screen and (max-width: 400px){
+    .project .list .item{
+        width: 90%;
+        margin: 0 auto;
+    }
+}
