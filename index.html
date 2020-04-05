@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .wrapper {
+
+            position: relative;
+            width: 400px;
+            height: 300px;
+            margin: 100px auto 0;
+            /* border: 1px solid black; */
+            overflow: hidden;
+        }
+
+        .sliderPage {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 2000px;
+            height: 300px;
+
+        }
+
+        .sliderPage li {
+            float: left;
+            width: 400px;
+            height: 300px;
+        }
+
+        .sliderPage li img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn {
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            width: 40px;
+            height: 40px;
+            color: #fff;
+            opacity: 0;
+            background: #000;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        .btnLeft {
+            margin-left: 5px;
+        }
+
+        .btnRight {
+            right: 5px;
+        }
+
+        .wrapper:hover .btn {
+            opacity: 0.6;
+
+        }
+
+        .sliderIndex {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            bottom: 10px;
+        }
+
+        .sliderIndex span {
+            cursor: pointer;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+
+        }
+
+        .sliderIndex span.active {
+            background-color: #f40;
+            opacity: 0.7;
+        }
+        .btnList{
+            position: absolute;
+            left: 50%;
+            top:  50%;
+            transform: translate(-50%,-50%);
+            margin: 150px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <ul class="sliderPage">
+            <li>
+                <img src="./imgs/img1.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/img2.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/img3.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/img4.jpg" alt="">
+            </li>
+            <li>
+                <img src="./imgs/img1.jpg" alt="">
+            </li>
+        </ul>
+        <div class="btn btnLeft">&lt;</div>
+        <div class="btn btnRight">&gt;</div>
+        <div class="sliderIndex">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="btnList">
+        <button class="btnShow_hide">显示/隐藏指示器</button>
+        <button class="btnOpen_ClosePlay">开启/关闭自动播放</button>
+        <button class="btnOpen_CloseLoop">开启/关闭无限循环</button>
+        <input type="text" placeholder="自定义切换时间" onkeyup="value=value.replace(/[^\d]/g,'')">
+        <button class="setTime">确定</button>
+    </div>
+    
+
+    <script src="./move.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
